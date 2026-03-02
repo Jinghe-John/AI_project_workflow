@@ -289,94 +289,11 @@ def run_arbitrage_analysis(
       - Counterfactual Analysis (functional equivalence of policy simulations)
     """
     system_prompt = (
-        "You are a top-tier journal referee. Your task is to conduct a multi-dimensional review "
-        "to detect potential academic arbitrage. You must strictly evaluate the paper's contribution "
-        "against the provided definitions for three key dimensions: Research Question, Research Design, "
-        "and Counterfactual Analysis, and return a boolean judgment for each."
+        XXXXX
     )
 
     user_prompt = {
-        "task": (
-            "Based on the provided materials for two papers, conduct a holistic evaluation to determine "
-            "if the Chinese paper constitutes academic arbitrage of the English paper. For each of the "
-            "three dimensions, provide a boolean judgment based strictly on the provided definitions."
-        ),
-        "evaluation_framework": {
-            "name": "The Holistic Arbitrage Review (HAR)",
-            "description": (
-                "You must sequentially analyze the three dimensions below and provide a boolean judgment for each."
-            ),
-            "dimensions": [
-                [
-                    {
-                        "dimension": 1,
-                        "name": "Research Question (RQ)",
-                        "definition": "Determine if the Chinese paper is strictly 'arbitraging' the English paper by investigating the theoretically equivalent economic relationship under a different institutional label. \n\nTo make this judgment, perform the 'Mechanism Mapping Test':\n1. Identify the 'Unique Chinese Factors' claimed in the Chinese paper (e.g., 'Hukou', 'Latecomer Advantage', 'Government Subsidy').\n2. Map these factors to standard economic parameters found in the English paper (e.g., 'Hukou' → 'Labor Mobility Friction/Wedge'; 'Latecomer Advantage' → 'Convergence/Catch-up effect'; 'Subsidy' → 'Cost Reduction/Distortion').\n3. Compare the Core Question: Once the Chinese terms are translated into standard terms, does the Chinese paper ask the exact same causality question (Does X cause Y?) using the same identification logic as the English paper?\n\nJudgement Criteria: It IS Arbitrage if the Chinese paper merely treats the institutional context as a specific proxy for a standard variable (e.g., using Hukou to measure Friction) to validate if the coefficient sign/magnitude holds in China. It is NOT Arbitrage only if the Chinese context introduces a new structural mechanism that changes the functional form of the model, not just the parameter values.",
-                        "examples": [
-                            {
-                                "case": "Arbitrage",
-                                "description": "English paper: Quantifies the misallocation of capital due to financial frictions in the US manufacturing sector. Chinese paper: Quantifies the misallocation of capital due to financial frictions in the Chinese manufacturing sector using the same definition of misallocation."
-                            },
-                            {
-                                "case": "Arbitrage (Framework Displacement)",
-                                "description": "English paper analyzes optimal taxation in a federal system; Chinese paper analyzes optimal taxation in a provincial system using the same trade-offs and logic."
-                            },
-                            {
-                                "case": "Not Arbitrage (Different X)",
-                                "description": "English paper: Analyzes financial frictions. Chinese paper: Analyzes state-ownership (a specific institutional feature) that requires a fundamental change to the firm's objective function in the model."
-                            },
-                            {
-                                "case": "Not Arbitrage (Different Y)",
-                                "description": "English paper: Explains labor share decline via automation. Chinese paper: Explains labor share decline via structural transformation from agriculture to manufacturing."
-                            }
-                        ]
-                    },
-                    {
-                        "dimension": 2,
-                        "name": "Research Design (RD)",
-                        "definition": "A Chinese paper arbitrages an English paper if it adopts the same 'Model Backbone' or 'Identification Recipe'. For structural work, A Chinese paper arbitrages an English paper if: it adopts an identical structural model and estimation strategy. Compare the model primitives (preferences, technology, constraints) and the identification strategy (choice of moments for GMM/SMM or likelihood function). If the Chinese paper uses the exact same system of equations and matches the exact same set of data moments (e.g., firm size distribution, investment volatility) to estimate parameters, it is arbitrage. ",
-                        "examples": [
-                            {
-                                "case": "Arbitrage",
-                                "description": "English paper uses a Hopenhayn (1992) style model with adjustment costs, estimated via SMM by matching investment rates and Tobin's Q. Chinese paper uses the exact same setup and matches the exact same moments using Chinese listed firm data."
-                            },
-                            {
-                                "case": "Arbitrage (Identification Mimicry)",
-                                "description": "The Chinese paper replicates the 'moment matching' or 'structural inversion' strategy of the English paper, using the same mathematical mappings from data distributions (e.g., city population/wages) to parameters."
-                            },
-                            {
-                                "case": "Not Arbitrage",
-                                "description": "The Chinese paper extends a standard model by adding a specific 'Hukou' constraint equation that alters the labor supply elasticity, necessitating a new block of equations to solve the equilibrium."
-                            },
-                            {
-                                "case": "Not Arbitrage",
-                                "description": "English paper identifies the elasticity using time-series variation in tariffs. Chinese paper identifies it using cross-sectional variation in unique Chinese geography, requiring a fundamentally different estimator."
-                            }
-                        ]
-                    },
-                    {
-                        "dimension": 3,
-                        "name": "Counterfactual Analysis (CF)",
-                        "definition": "A Chinese paper arbitrages an English paper if its counterfactual experiments are 'Functional Equivalents' of those in the English paper. It is arbitrage if the simulated 'shock' (e.g., removing a distortion, changing a tax, or shifting a constraint) targets the same economic margin and derives the same qualitative welfare or efficiency implications. If the simulation's 'transmission channel' (how the shock moves through the model to the outcome) is identical to the English paper, it is arbitrage.",
-                        "examples": [
-                            {
-                                "case": "Arbitrage",
-                                "description": "English paper simulates a counterfactual where size-dependent policies are removed, finding TFP rises by 10%. Chinese paper simulates the removal of size-dependent policies in China, finding TFP rises by 15%. The logic and the experiment are identical."
-                            },
-                            {
-                                "case": "Arbitrage (Functional Equivalence)",
-                                "description": "English paper: Simulates removing general migration costs. Chinese paper: Simulates removing Hukou restrictions. Both target the same 'Friction-to-Reallocation' transmission channel."
-                            },
-                            {
-                                "case": "Not Arbitrage",
-                                "description": "English paper simulates the removal of size-dependent policies. Chinese paper simulates a unique Chinese policy: the privatization of State-Owned Enterprises (SOEs), representing a distinct policy shock."
-                            }
-                        ]
-                    }
-                ]
-              ],
-                },
-            ],
+        XXXX
         },
         "inputs": {
             "english_paper_materials": eng_passage,
@@ -1090,4 +1007,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
