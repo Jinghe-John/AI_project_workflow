@@ -268,52 +268,7 @@ def run_arbitrage_analysis(
     (Research Question, Research Design, Mechanism) for one paper pair.
     """
     user_prompt = {
-        "task": "Based on the provided materials for two papers, conduct a holistic evaluation to determine if the Chinese paper constitutes academic arbitrage of the English paper. For each of the three dimensions, provide a boolean judgment based strictly on the provided definitions.",
-        "evaluation_framework": {
-            "name": "The Holistic Arbitrage Review (HAR)",
-            "description": "You must sequentially analyze the three dimensions below and provide a boolean judgment for each.",
-            "dimensions": [
-                {
-                    "dimension": 1,
-                    "name": "Research Question (RQ)",
-                    "definition": "A Chinese paper arbitrages an English paper if: it answers the exactly same core research question, using Chinese data and under a China context, and obtains similar findings. Compare the primary explanatory variable (X) and the primary outcome (Y). If X and Y are functionally identical which means it refers to similar economic indicator and the main difference is the geographical context, it is arbitrage. If X (e.g., a different type of transportation infrastructure) or Y (e.g., a different outcome like knowledge spillover instead of collaboration) is substantively different, it is not.",
-                    "examples": [
-                        {"case": "Arbitrage",
-                         "description": "English paper shows building railways affects innovation collaborations in the US; Chinese paper shows building railways affects innovation collaboration in China."},
-                        {"case": "Arbitrage (different geographic scale in different context)",
-                         "description": "English paper shows that state level taxes affects more businesss locations than Federal level in the US; Chinese paper shows that province level taxes affects more business locations than country level in China. "},
-                        {"case": "Not Arbitrage (Different X)",
-                         "description": "English paper: railways affect innovation collaboration; Chinese paper: airlines affect innovation collaboration."},
-                        {"case": "Not Arbitrage (Different Y)",
-                         "description": "English paper: railways affect innovation collaboration; Chinese paper: railways affect knowledge spillover."}
-                    ]
-                },
-                {
-                    "dimension": 2,
-                    "name": "Research Design (RD)",
-                    "definition": "A Chinese paper arbitrages an English paper if: it adopts an identical research design. Compare the core equation to be estimated, unit of observation, and variable construction. If the Chinese paper's regression model is functionally exactly the same as the English paper's, with the main difference being the data source (e.g., Chinese patents vs. US patents), then the designs are identical and it is arbitrage.",
-                    "examples": [
-                        {"case": "Arbitrage",
-                         "description": "English paper regresses the log number of patent collaborations between inventors in two US cities on a dummy for a railway connection. Chinese paper does the same between two Chinese prefectures."},
-                        {"case": "Not Arbitrage",
-                         "description": "The English paper regresses the log number of patent collaborations (Y) between inventors in two US cities on a dummy for a railway connection. The Chinese paper, while using the same railway connection dummy, instead regresses the regional wage convergence (a different Y) between the two Chinese prefectures on it. This is not arbitrage because the dependent variable is measuring a substantively different economic outcome (innovation vs. labor market integration)."},
-                        {"case": "Not Arbitrage",
-                         "description": "The English paper regresses the log number of patent collaborations on a dummy for a railway connection (X). The Chinese paper, however, regresses the same patent collaboration outcome on the number of university-industry joint research centers (a different X) in those prefectures. This is not arbitrage because the core explanatory variable, and thus the entire causal logic being tested, is fundamentally different (transport infrastructure vs. institutional collaboration)."}
-                    ]
-                },
-                {
-                    "dimension": 3,
-                    "name": "Mechanism",
-                    "definition": "A Chinese paper arbitrages an English paper if: it explores the exactly same mechanism in a identical way with nearly same findings. Compare the causal story, the empirical test for the mechanism, and the conclusion. If the test logic is the same (e.g., a heterogeneity analysis on the same dimension) and the conclusion is the same, it is arbitrage. Minor differences in proxies due to data limitations (e.g., using 'applicants' instead of 'inventors') do not preclude a judgment of arbitrage if the underlying test is the same.",
-                    "examples": [
-                        {"case": "Arbitrage",
-                         "description": "English paper shows the railway effect is stronger for US inventors with no prior collaboration, concluding it builds new relationships. Chinese paper shows the same for Chinese applicants with no prior collaboration, reaching the same conclusion. This is arbitrage because 'prior collaboration' is the functionally identical test, and 'inventor' vs. 'applicant' represents the same theoretical construct of an innovating agent."},
-                        {"case": "Not Arbitrage",
-                         "description": "To explain how railways affect innovation, the English paper argues the mechanism is 'face-to-face communication' and tests this by showing the effect is stronger for complex technologies. The Chinese paper argues the mechanism in its context is 'access to larger labor markets' and tests this by showing the effect is stronger in cities that have relaxed residency (hukou) restrictions. This is not arbitrage because the causal stories and the empirical tests for them are substantively different."
-                         }
-                    ]
-                }
-            ]
+        XXXX
         },
         "inputs": {
             "english_paper_materials": eng_passage,
@@ -1051,4 +1006,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
