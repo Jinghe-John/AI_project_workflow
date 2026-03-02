@@ -121,21 +121,7 @@ def identify_country(text: str) -> str:
                 {
                     "role": "system",
                     "content": (
-                        "TASK: Identify the **Country of Data Origin** used in the text.\n"
-                        "RULES:\n"
-                        "1. Focus ONLY on Data/Samples source.\n"
-                        "2. City-to-Country: 'Shanghai' -> 'China', 'Texas' -> 'USA'.\n"
-                        "3. IGNORE Author Affiliations.\n"
-                        "\n"
-                        "**STANDARDIZATION RULES (MUST FOLLOW):**\n"
-                        "1. **MULTIPLE COUNTRIES**: If the study uses data from **more than one country** "
-                        "(e.g., '19 OECD countries', 'EU members', 'Global', 'International', "
-                        "'Cross-country analysis', or lists like 'China and USA'), "
-                        "output **'Multiple Countries'**.\n"
-                        "2. For United States, U.S., U.S.A, America -> Output **'USA'**\n"
-                        "3. For United Kingdom, Great Britain -> Output **'UK'**\n"
-                        "4. For P.R.C, Mainland China -> Output **'China'**\n"
-                        "5. Output ONLY the standard name. Do not add explanations."
+                       XXXXX
                     ),
                 },
                 {
@@ -255,3 +241,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
