@@ -1,4 +1,4 @@
-# 学术套利检测系统 · 端到端技术文档
+# 端到端技术文档
 
 > **Academic Arbitrage Detection System — End-to-End Pipeline Documentation**
 
