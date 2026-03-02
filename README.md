@@ -1,4 +1,4 @@
-# Academic Arbitrage Detection System · End-to-End Technical Documentation
+# AI Project Workflow · End-to-End Technical Documentation
 
 ---
 **Read this in other languages: [English](README.md), [中文](README_cn.md).**
